@@ -146,6 +146,18 @@ The Python script `scripts/check.py` is used to process the uploaded images. It 
 2. **Access the API**:
    The server will run on `http://localhost:3000`. You can now make requests to the API endpoints.
 
+## Dependecies
+
+    "axios": "^1.7.8",          // For making HTTP requests (like OpenAI API calls)
+    "cors": "^2.8.5",           // To enable CORS
+    "dotenv": "^16.4.5",        // For loading environment variables from a .env file
+    "express": "^4.21.1",       // Web framework for the Node.js server
+    "multer": "^1.4.5-lts.1",   // For handling multipart/form-data, used for file uploads
+    "child_process": "^1.0.2",  // Allows you to spawn child processes (e.g., to run the Python script)
+    "path": "^0.12.7",          // Node.js utility for working with file and directory paths
+    "fs": "0.0.1",              // Node.js file system module for reading and writing files
+    "python-shell": "^3.0.0"    // (Optional) If you'd like to use this for executing Python scripts from Node.js
+
 ## Error Handling
 
 - If the OpenAI API key is missing or incorrect, the server will return a `500` error with the message `Missing OpenAI API Key`.
