@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "A Node.js server for AI-based image recognition using OpenAI and Python.",
   "main": "server.js",
-"scripts": {
-  "start": "node server.js"
-},
+  "scripts": {
+    "start": "node server.js",
+    "install-python-deps": "pip install -r scripts/requirements.txt"
+  },
   "keywords": [
     "AI",
     "image-recognition",
