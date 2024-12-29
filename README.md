@@ -158,6 +158,21 @@ The Python script `scripts/check.py` is used to process the uploaded images. It 
     "fs": "0.0.1",              // Node.js file system module for reading and writing files
     "python-shell": "^3.0.0"    // (Optional) If you'd like to use this for executing Python scripts from Node.js
 
+## Deploying on Render
+
+To deploy the server-ai-image-recognition app on Render, you need to configure the Build Command and Start Command correctly.
+
+    Build Command: Render runs this command to install the Python dependencies from your requirements.txt file before each deployment. This ensures that all necessary Python libraries (like numpy, pillow, etc.) are installed and available for the backend Python processing.
+
+   $ npm run install-python-deps
+
+   Start Command: Render runs this command to start your Node.js server after the build process is complete. It launches the main Express server defined in server.js to handle incoming requests.
+
+    $ node server.js
+
+Make sure that your requirements.txt file is located in the scripts/ folder and contains all the necessary Python dependencies for the image recognition logic. Render will automatically handle the installation and execution of both Python and Node.js components, allowing your app to function seamlessly.
+
+
 ## Error Handling
 
 - If the OpenAI API key is missing or incorrect, the server will return a `500` error with the message `Missing OpenAI API Key`.
